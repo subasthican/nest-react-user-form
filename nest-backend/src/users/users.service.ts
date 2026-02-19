@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UsersService {
-  private users = [];
+  private users: any[] = [];
 
   // CREATE
   createUser(user: any) {
