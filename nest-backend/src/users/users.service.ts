@@ -1,22 +1,27 @@
 import { Injectable } from '@nestjs/common';
 
+export class User {
+  name: string;
+  email: string;
+}
+
 @Injectable()
 export class UsersService {
-  private users: any[] = [];
+  private users: User[] = [];
 
   // CREATE
-  createUser(user: any) {
+  createUser(user: User) {
     this.users.push(user);
     return { message: 'User added successfully' };
   }
 
   // READ
-  getUsers() {
+  getUsers(): User[] {
     return this.users;
   }
 
   // UPDATE
-  updateUser(index: number, updatedUser: any) {
+  updateUser(index: number, updatedUser: User) {
     this.users[index] = updatedUser;
     return { message: 'User updated successfully' };
   }

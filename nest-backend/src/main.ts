@@ -3,8 +3,8 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors();
+
+  app.enableCors(); // allow React frontend to talk to backend
   await app.listen(3000);
 }
 bootstrap();
-
